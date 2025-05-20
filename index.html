@@ -3,89 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rohit Noir — Design Hub</title>
+  <title>Design Hub — Rohit Noir</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      background-color: #000;
-      color: #fff;
+      background-color: #0b0b0b;
       font-family: 'Segoe UI', sans-serif;
-      line-height: 1.6;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid #333;
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
     }
 
-    .logo {
-      font-size: 1.4rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #e50914;
+    .glow:hover {
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.7);
+      transform: scale(1.02);
     }
 
-    nav a {
-      color: #aaa;
-      margin-left: 30px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    section {
-      padding: 60px 40px;
-      animation: fadeIn 1s ease-in;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .upload-box, .rate-box, .feedback-box {
-      background: #111;
-      border: 1px solid #222;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .upload-box:hover, .rate-box:hover, .feedback-box:hover {
-      transform: translateY(-5px);
-    }
-
-    input[type="file"], textarea, select, button {
-      margin-top: 10px;
-      width: 100%;
-      padding: 10px;
-      background: #222;
-      border: none;
-      color: #fff;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    button {
-      background: #e50914;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background: #b00610;
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     @keyframes fadeIn {
@@ -94,53 +32,56 @@
     }
   </style>
 </head>
-<body>
+<body class="text-white fade-in">
 
-  <header>
-    <div class="logo">Rohit Noir</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#upload">Upload</a>
-      <a href="#rate">Rate</a>
-      <a href="#feedback">Feedback</a>
+  <!-- Header -->
+  <header class="flex justify-between items-center px-10 py-6 border-b border-gray-800">
+    <h1 class="text-2xl font-bold tracking-wider text-red-600">Rohit Noir</h1>
+    <nav class="space-x-6">
+      <a href="#home" class="hover:text-red-500 transition">Home</a>
+      <a href="#upload" class="hover:text-red-500 transition">Upload</a>
+      <a href="#rate" class="hover:text-red-500 transition">Rate</a>
+      <a href="#feedback" class="hover:text-red-500 transition">Feedback</a>
     </nav>
   </header>
 
-  <section id="home">
-    <h1>Welcome to the Noir Design Hub</h1>
-    <p>Upload your work. Rate others. Build the future of design.</p>
+  <!-- Home -->
+  <section id="home" class="px-10 py-20">
+    <h2 class="text-4xl font-semibold mb-4">Welcome to Your Design Hub</h2>
+    <p class="text-gray-400 max-w-xl">A cinematic, disciplined space to upload your creations, rate others, and build the future of design — one frame at a time.</p>
   </section>
 
-  <section id="upload">
-    <h1>Upload Your Design</h1>
-    <div class="upload-box">
-      <p>Select your design file (JPG, PNG, PDF):</p>
-      <input type="file" />
-      <button>Submit</button>
+  <!-- Upload -->
+  <section id="upload" class="px-10 py-16">
+    <div class="glass rounded-xl p-6 max-w-lg glow transition duration-300">
+      <h3 class="text-2xl mb-4">Upload Your Design</h3>
+      <input type="file" class="bg-gray-900 p-3 rounded w-full mb-4" />
+      <button class="bg-red-600 hover:bg-red-700 transition w-full py-2 rounded font-semibold">Submit</button>
     </div>
   </section>
 
-  <section id="rate">
-    <h1>Rate Other Designs</h1>
-    <div class="rate-box">
-      <p>Design Name: Sample Artwork</p>
-      <label for="rating">Your Rating:</label>
-      <select id="rating">
-        <option>5 - Excellent</option>
-        <option>4 - Good</option>
-        <option>3 - Average</option>
-        <option>2 - Poor</option>
-        <option>1 - Bad</option>
+  <!-- Rate -->
+  <section id="rate" class="px-10 py-16">
+    <div class="glass rounded-xl p-6 max-w-lg glow transition duration-300">
+      <h3 class="text-2xl mb-4">Rate a Design</h3>
+      <p class="mb-2 text-gray-300">Design Name: <span class="text-white">"Urban Poster #24"</span></p>
+      <select class="bg-gray-900 p-3 rounded w-full mb-4">
+        <option>5 - Incredible</option>
+        <option>4 - Impressive</option>
+        <option>3 - Decent</option>
+        <option>2 - Needs Work</option>
+        <option>1 - Poor</option>
       </select>
-      <button>Submit Rating</button>
+      <button class="bg-red-600 hover:bg-red-700 transition w-full py-2 rounded font-semibold">Submit Rating</button>
     </div>
   </section>
 
-  <section id="feedback">
-    <h1>Leave Feedback</h1>
-    <div class="feedback-box">
-      <textarea rows="5" placeholder="Write your feedback here..."></textarea>
-      <button>Send Feedback</button>
+  <!-- Feedback -->
+  <section id="feedback" class="px-10 py-16">
+    <div class="glass rounded-xl p-6 max-w-lg glow transition duration-300">
+      <h3 class="text-2xl mb-4">Give Feedback</h3>
+      <textarea rows="5" placeholder="Leave your thoughts..." class="bg-gray-900 p-3 rounded w-full text-white mb-4"></textarea>
+      <button class="bg-red-600 hover:bg-red-700 transition w-full py-2 rounded font-semibold">Send Feedback</button>
     </div>
   </section>
 

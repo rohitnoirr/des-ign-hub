@@ -7,18 +7,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      background-color: #0b0b0b;
       font-family: 'Segoe UI', sans-serif;
     }
 
     .glass {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
     }
 
     .glow:hover {
-      box-shadow: 0 0 15px rgba(229, 9, 20, 0.7);
+      box-shadow: 0 0 20px rgba(229, 9, 20, 0.7);
       transform: scale(1.02);
     }
 
@@ -32,10 +31,19 @@
     }
   </style>
 </head>
-<body class="text-white fade-in">
+<body class="text-white fade-in relative">
 
-  <!-- Header -->
-  <header class="flex justify-between items-center px-10 py-6 border-b border-gray-800">
+  <!-- Video Background -->
+  <video autoplay muted loop class="fixed w-full h-full object-cover z-[-1]">
+    <source src="bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 z-0"></div>
+
+  <!-- Content -->
+  <header class="flex justify-between items-center px-10 py-6 relative z-10 border-b border-gray-800">
     <h1 class="text-2xl font-bold tracking-wider text-red-600">Rohit Noir</h1>
     <nav class="space-x-6">
       <a href="#home" class="hover:text-red-500 transition">Home</a>
@@ -45,14 +53,12 @@
     </nav>
   </header>
 
-  <!-- Home -->
-  <section id="home" class="px-10 py-20">
+  <section id="home" class="px-10 py-20 relative z-10">
     <h2 class="text-4xl font-semibold mb-4">Welcome to Your Design Hub</h2>
-    <p class="text-gray-400 max-w-xl">A cinematic, disciplined space to upload your creations, rate others, and build the future of design — one frame at a time.</p>
+    <p class="text-gray-300 max-w-xl">A cinematic, disciplined space to upload your creations, rate others, and build the future of design — one frame at a time.</p>
   </section>
 
-  <!-- Upload -->
-  <section id="upload" class="px-10 py-16">
+  <section id="upload" class="px-10 py-16 relative z-10">
     <div class="glass rounded-xl p-6 max-w-lg glow transition duration-300">
       <h3 class="text-2xl mb-4">Upload Your Design</h3>
       <input type="file" class="bg-gray-900 p-3 rounded w-full mb-4" />
@@ -60,8 +66,7 @@
     </div>
   </section>
 
-  <!-- Rate -->
-  <section id="rate" class="px-10 py-16">
+  <section id="rate" class="px-10 py-16 relative z-10">
     <div class="glass rounded-xl p-6 max-w-lg glow transition duration-300">
       <h3 class="text-2xl mb-4">Rate a Design</h3>
       <p class="mb-2 text-gray-300">Design Name: <span class="text-white">"Urban Poster #24"</span></p>
@@ -76,8 +81,7 @@
     </div>
   </section>
 
-  <!-- Feedback -->
-  <section id="feedback" class="px-10 py-16">
+  <section id="feedback" class="px-10 py-16 relative z-10">
     <div class="glass rounded-xl p-6 max-w-lg glow transition duration-300">
       <h3 class="text-2xl mb-4">Give Feedback</h3>
       <textarea rows="5" placeholder="Leave your thoughts..." class="bg-gray-900 p-3 rounded w-full text-white mb-4"></textarea>
